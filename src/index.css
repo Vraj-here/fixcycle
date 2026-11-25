@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #F8FAFC;
+    color: #111827;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Leaflet map styling to blend seamlessly with FixCycle UI */
+.leaflet-container {
+  font-family: 'Inter', system-ui, sans-serif;
+  z-index: 10;
+  background-color: #EEF2F6;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.14);
+  border: 1px solid #E2E8F0;
+  padding: 0;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.fixcycle-marker {
+  background: transparent;
+  border: none;
+}
+
+/* Subtle pulsing ring for live pickup rider marker */
+@keyframes fixcycle-pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.rider-pulse {
+  animation: fixcycle-pulse 1.8s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+/* Custom thin scrollbar for lists */
+.thin-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.thin-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+.thin-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
